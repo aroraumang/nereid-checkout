@@ -718,7 +718,9 @@ class Checkout(ModelView):
                 # Return if BaseResponse
                 return rv
 
-            flash(_("Error is processing payment."), "warning")
+            flash(_(
+                "There has been an error while processing your payment."
+            ), "warning")
 
         return render_template(
             'checkout/payment_method.jinja',
